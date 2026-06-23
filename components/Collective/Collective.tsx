@@ -1,7 +1,31 @@
 import Image from "next/image";
 import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import SplitType from "split-type";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 function Collective() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    const split = new SplitType(".hero-title", {
+      types: "words",
+    });
+
+    gsap.from(split.words, {
+      y: 120,
+      opacity: 0,
+      rotateX: -90,
+      stagger: 0.08,
+      duration: 1.2,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".hero-title",
+        start: "top 80%",
+      },
+    });
+  });
   const members = [
     {
       name: "John Anderson",
@@ -25,10 +49,10 @@ function Collective() {
 
   return (
     <section className="bg-[#eef1f3] py-60">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="mouse-glow max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-10">
           <div>
-            <h1 className="text-5xl md:text-5xl font-medium leading-tight">
+            <h1 className="hero-title text-5xl md:text-5xl font-medium leading-tight">
               Crafting Exceptional Digital Experiences
             </h1>
 

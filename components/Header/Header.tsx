@@ -1,10 +1,13 @@
 "use client";
+import { useTheme } from "next-themes";
 
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 export default function Header() {
+  const { theme, setTheme } = useTheme();
+
   gsap.registerPlugin(useGSAP);
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -32,12 +35,15 @@ export default function Header() {
     });
   });
   return (
-    <header className="bg-[#eef1f3] min-h-screen px-5 py-5">
+    <header
+      className="bg-[#eef1f3]   dark:bg-[#0f0f0f]
+ min-h-screen px-5 py-5"
+    >
       <div className="max-w-[1250px] mx-auto">
         <nav className=" rounded-full px-8 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-md bg-[#14B8A6]" />
-
+            <div className="w-8 h-8 rounded-md " />
+            <Image src="/logos/sofia.png" alt="sofia" width={70} height={70} />
             <h2 className="text-2xl font-bold">
               So<span className="text-[#14B8A6]">fia</span>
             </h2>
@@ -59,9 +65,16 @@ export default function Header() {
           </div>
 
           <div className="flex gap-3">
-            <button className="px-5 py-2 rounded-full border border-gray-200">
-              Log in
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              {theme === "dark" ? "☀️" : "🌙"}
             </button>
+            <Link href="/login">
+              <button className="px-5 py-2 rounded-full border border-gray-200">
+                Log in
+              </button>
+            </Link>
           </div>
         </nav>
 
