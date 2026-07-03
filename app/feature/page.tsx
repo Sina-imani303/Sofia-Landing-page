@@ -15,7 +15,6 @@ import { RiCustomerService2Line } from "react-icons/ri";
 import {
   Briefcase,
   ChevronRight,
-  Home,
   HomeIcon,
   Menu,
   Phone,
