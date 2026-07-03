@@ -1,12 +1,17 @@
 "use client";
-import { ArrowUpRight, Briefcase, ChevronRight, Sparkles } from "lucide-react";
+import {
+  ArrowUpRight,
+  Briefcase,
+  ChevronRight,
+  HomeIcon,
+  Sparkles,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Clock3 } from "lucide-react";
-import Home from "../page";
 import Footer from "@/components/Footer/Footer";
 
 function ContactPage() {
@@ -25,7 +30,6 @@ function ContactPage() {
             <Link href="/contact">Contact</Link>
           </div>
 
-          {/* Mobile Button */}
           <button
             onClick={() => setOpen(!open)}
             className="flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 transition hover:bg-gray-100 lg:hidden"
@@ -55,7 +59,7 @@ function ContactPage() {
                   className="group flex items-center justify-between border-b border-gray-100 px-6 py-5 transition hover:bg-[#eef8f7] dark:border-gray-700 dark:hover:bg-[#202020]"
                 >
                   <div className="flex items-center gap-4">
-                    <Home
+                    <HomeIcon
                       size={20}
                       className="text-[#14B8A6] transition group-hover:scale-110"
                     />

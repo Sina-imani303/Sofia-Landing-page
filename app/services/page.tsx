@@ -9,6 +9,7 @@ import {
   ChevronRight,
   Briefcase,
   Sparkles,
+  HomeIcon,
 } from "lucide-react";
 
 import {
@@ -29,7 +30,6 @@ import {
 } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import Footer from "@/components/Footer/Footer";
-import Home from "../page";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 function ServicesPage() {
@@ -81,7 +81,7 @@ function ServicesPage() {
                   className="group flex items-center justify-between border-b border-gray-100 px-6 py-5 transition hover:bg-[#eef8f7] dark:border-gray-700 dark:hover:bg-[#202020]"
                 >
                   <div className="flex items-center gap-4">
-                    <Home
+                    <HomeIcon
                       size={20}
                       className="text-[#14B8A6] transition group-hover:scale-110"
                     />

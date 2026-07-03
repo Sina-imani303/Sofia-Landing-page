@@ -16,6 +16,7 @@ import {
   Briefcase,
   ChevronRight,
   Home,
+  HomeIcon,
   Menu,
   Phone,
   Sparkles,
@@ -38,7 +39,6 @@ function FeaturePage() {
             <Link href="/contact">Contact</Link>
           </div>
 
-          {/* Mobile Button */}
           <button
             onClick={() => setOpen(!open)}
             className="flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 transition hover:bg-gray-100 lg:hidden"
@@ -68,7 +68,7 @@ function FeaturePage() {
                   className="group flex items-center justify-between border-b border-gray-100 px-6 py-5 transition hover:bg-[#eef8f7] dark:border-gray-700 dark:hover:bg-[#202020]"
                 >
                   <div className="flex items-center gap-4">
-                    <Home
+                    <HomeIcon
                       size={20}
                       className="text-[#14B8A6] transition group-hover:scale-110"
                     />
