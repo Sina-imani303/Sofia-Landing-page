@@ -10,27 +10,26 @@ export default function Footer() {
     });
   };
   return (
-    <footer className="bg-[#070B10] text-white">
-      <div className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid lg:grid-cols-2 gap-16 border-b border-white/10 pb-16">
+    <footer className="overflow-hidden bg-[#070B10] text-white">
+      <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24">
+        <div className="grid gap-12 border-b border-white/10 pb-12 lg:grid-cols-2 lg:gap-16 lg:pb-16">
           <div>
-            <span className="text-sm uppercase tracking-[0.3em] text-[#14B8A6]">
+            <span className="text-xs uppercase tracking-[0.35em] text-[#14B8A6] md:text-sm">
               Sofia Studio
             </span>
 
-            <h2 className="text-5xl md:text-5xl font-bold mt-6 leading-tight">
+            <h2 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl lg:mt-6 lg:text-5xl">
               Let`s Build
               <br />
               Something Great
             </h2>
 
-            <p className="text-gray-400 mt-8 max-w-xl text-lg leading-8">
+            <p className="mt-6 max-w-xl text-base leading-7 text-gray-400 md:mt-8 md:text-lg md:leading-8">
               We create modern websites, SaaS platforms, and digital products
               that help businesses grow faster and stand out online.
             </p>
           </div>
-
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col gap-10 lg:justify-between">
             <div>
               <p className="text-gray-500 uppercase tracking-[0.2em] text-sm">
                 Get In Touch
@@ -38,27 +37,24 @@ export default function Footer() {
 
               <a
                 href="mailto:hello@sofia.com"
-                className="block mt-4 text-3xl font-semibold hover:text-[#14B8A6] transition"
+                className="mt-4 block break-all text-2xl font-semibold transition hover:text-[#14B8A6] md:text-3xl"
               >
                 DevSofia@gamil.com
               </a>
             </div>
-
-            <div className="flex gap-4 mt-10">
+            <div className="mt-6 flex gap-3 md:mt-10 md:gap-4">
               <Link
                 href="#"
                 className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#14B8A6] hover:text-black transition"
               >
                 <FaGithub size={20} />
               </Link>
-
               <Link
                 href="#"
                 className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#14B8A6] hover:text-black transition"
               >
                 <FaLinkedinIn size={20} />
               </Link>
-
               <Link
                 href="#"
                 className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#14B8A6] hover:text-black transition"
@@ -68,7 +64,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
         <div className="grid md:grid-cols-3 gap-10 py-16 border-b border-white/10">
           <div>
             <h3 className="text-lg font-semibold mb-6">Navigation</h3>
@@ -102,7 +97,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
         <div className="flex flex-col md:flex-row justify-between items-center pt-10">
           <p className="text-gray-500">© 2025 Sofia. All rights reserved.</p>
 

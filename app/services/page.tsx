@@ -2,7 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  ArrowRight,
+  Phone,
+  ChevronRight,
+  Briefcase,
+  Sparkles,
+} from "lucide-react";
 
 import {
   FiCode,
@@ -22,28 +29,124 @@ import {
 } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import Footer from "@/components/Footer/Footer";
-function servicesPage() {
+import Home from "../page";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+function ServicesPage() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <div className="">
-        <nav className=" rounded-full px-8 py-3 flex items-center justify-between ">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-6 rounded-md " />
-            <h2 className="text-3xl leading-[1.2] font-light ">SOFIA</h2>
-          </div>
+        <nav className="relative flex items-center justify-between px-4 py-4 md:px-8">
+          <div className="flex items-center gap-3">SOFIA</div>
 
-          <div className="hidden md:flex items-center gap-10 text-gray-700">
+          <div className="hidden lg:flex items-center gap-8 xl:gap-10 text-gray-700">
             <Link href="/">Home</Link>
             <Link href="/feature">Features</Link>
             <Link href="/services">Services</Link>
             <Link href="/contact">Contact</Link>
-            <div className="flex ">
-              <button className="px-5 py-2 rounded-xl border text-white bg-black border-gray-200">
-                Let`s Talk
-              </button>
-            </div>
           </div>
+          <div className="flex ">
+            <button className="px-5 py-2 rounded-xl border text-white bg-black border-gray-200">
+              Let`s Talk
+            </button>
+          </div>
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 transition hover:bg-gray-100 lg:hidden"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+          {open && (
+            <div
+              className="
+      absolute
+      left-0
+      right-0
+      top-[calc(100%+12px)]
+      z-50
+      origin-top
+      animate-in
+      fade-in
+      zoom-in-95
+      duration-200
+      lg:hidden
+    "
+            >
+              <div className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-2xl dark:border-gray-700 dark:bg-[#1a1a1a]">
+                <Link
+                  href="/"
+                  onClick={() => setOpen(false)}
+                  className="group flex items-center justify-between border-b border-gray-100 px-6 py-5 transition hover:bg-[#eef8f7] dark:border-gray-700 dark:hover:bg-[#202020]"
+                >
+                  <div className="flex items-center gap-4">
+                    <Home
+                      size={20}
+                      className="text-[#14B8A6] transition group-hover:scale-110"
+                    />
+
+                    <span className="text-lg font-medium">Home</span>
+                  </div>
+
+                  <ChevronRight className="transition group-hover:translate-x-1" />
+                </Link>
+
+                <Link
+                  href="/feature"
+                  onClick={() => setOpen(false)}
+                  className="group flex items-center justify-between border-b border-gray-100 px-6 py-5 transition hover:bg-[#eef8f7] dark:border-gray-700 dark:hover:bg-[#202020]"
+                >
+                  <div className="flex items-center gap-4">
+                    <Sparkles
+                      size={20}
+                      className="text-[#14B8A6] transition group-hover:scale-110"
+                    />
+
+                    <span className="text-lg font-medium">Features</span>
+                  </div>
+
+                  <ChevronRight className="transition group-hover:translate-x-1" />
+                </Link>
+
+                <Link
+                  href="/services"
+                  onClick={() => setOpen(false)}
+                  className="group flex items-center justify-between border-b border-gray-100 px-6 py-5 transition hover:bg-[#eef8f7] dark:border-gray-700 dark:hover:bg-[#202020]"
+                >
+                  <div className="flex items-center gap-4">
+                    <Briefcase
+                      size={20}
+                      className="text-[#14B8A6] transition group-hover:scale-110"
+                    />
+
+                    <span className="text-lg font-medium">Services</span>
+                  </div>
+
+                  <ChevronRight className="transition group-hover:translate-x-1" />
+                </Link>
+
+                <Link
+                  href="/contact"
+                  onClick={() => setOpen(false)}
+                  className="group flex items-center justify-between px-6 py-5 transition hover:bg-[#eef8f7] dark:hover:bg-[#202020]"
+                >
+                  <div className="flex items-center gap-4">
+                    <Phone
+                      size={20}
+                      className="text-[#14B8A6] transition group-hover:scale-110"
+                    />
+
+                    <span className="text-lg font-medium">Contact</span>
+                  </div>
+
+                  <ChevronRight className="transition group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+          )}
         </nav>
+
         <div className="bg-[#eef1f3]">
           <section className="max-w-7xl mx-auto px-6 py-12">
             <div className="grid lg:grid-cols-[35%_65%] gap-12 items-center">
@@ -323,4 +426,4 @@ function servicesPage() {
   );
 }
 
-export default servicesPage;
+export default ServicesPage;

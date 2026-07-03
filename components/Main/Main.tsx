@@ -97,60 +97,60 @@ function Main() {
   });
   return (
     <div className="bg-[#eef1f3] pb-24">
-      <section className="w-full py-10">
-        <div className="max-w-7xl mx-auto px-10">
-          <div className="flex flex-wrap items-center justify-center gap-20 text-xl font-semibold">
+      <section className="w-full py-8 md:py-10">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-10">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-20 text-base md:text-lg lg:text-xl font-semibold">
             <div className="grid gap-y-4">
               <span className="text-black">Trusted by 35000+</span>
               <span className="text-black">Companies of all sizes</span>
             </div>
-
             <div className="flex items-center gap-2">
               <Image
                 src="/logos/mintlify.png"
                 alt="Mintlify"
                 width={28}
                 height={28}
+                className="h-6 w-6 md:h-7 md:w-7"
               />
               <span className="text-black">Mintlify</span>
             </div>
-
             <div className="flex items-center gap-2">
               <Image
                 src="/logos/vercel.png"
                 alt="Vercel"
                 width={28}
                 height={28}
+                className="h-6 w-6 md:h-7 md:w-7"
               />
               <span className="text-black">Vercel</span>
             </div>
-
             <div className="flex items-center gap-2">
               <Image
                 src="/logos/github.png"
                 alt="GitHub"
                 width={28}
                 height={28}
+                className="h-6 w-6 md:h-7 md:w-7"
               />
               <span className="text-black">GitHub</span>
             </div>
-
             <div className="flex items-center gap-2">
               <Image
                 src="/logos/nextdotjs.png"
                 alt="Next.js"
                 width={28}
                 height={28}
+                className="h-6 w-6 md:h-7 md:w-7"
               />
               <span className="text-black">Next.js</span>
             </div>
-
             <div className="flex items-center gap-2">
               <Image
                 src="/logos/react.png"
                 alt="React"
                 width={28}
                 height={28}
+                className="h-6 w-6 md:h-7 md:w-7"
               />
               <span className="text-black">React</span>
             </div>
@@ -158,98 +158,92 @@ function Main() {
         </div>
       </section>
 
-      <section className="mt-20">
+      <section className="mt-16 md:mt-20">
         <div className="text-center">
-          <h1 className="line1 text-6xl font-semibold overflow-hidden gap-3">
+          <h1 className="line1 overflow-hidden text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
             Choose Your
-            <span className="line2 inline-block text-[#14B8A6]">Adventure</span>
+            <span className="line2 ml-2 inline-block text-[#14B8A6] md:ml-3">
+              Adventure
+            </span>
           </h1>
-          <p className="text-gray-500 text-xl mt-6">
+          <p className="mt-5 px-6 text-base leading-7 text-gray-500 md:px-0 md:text-xl">
             We build elite tech teams for companies and enhance
           </p>
 
-          <p className="text-gray-500 text-xl">
+          <p className="px-6 text-base leading-7 text-gray-500 md:px-0 md:text-xl">
             candidates tech skills and job prospects
           </p>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 mt-28">
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="image-card rounded-4xl ">
+      <section className="mx-auto mt-16 max-w-7xl px-4 md:mt-20 md:px-6 lg:mt-28">
+        <div className="grid gap-6 md:gap-8 lg:grid-cols-2 lg:gap-12">
+          <div className="image-card overflow-hidden rounded-3xl lg:rounded-4xl">
             <Image
               src="/banner/banner3.png"
               alt="Developers"
               width={1920}
               height={1080}
-              priority
-              className="image-inner w-full h-auto rounded-4xl"
+              className="image-inner h-65 w-full object-cover rounded-3xl lg:h-auto lg:rounded-4xl"
             />
           </div>
-
-          <div className="image-card rounded-4xl ">
+          <div className="image-card overflow-hidden rounded-3xl lg:rounded-4xl">
             <Image
               src="/banner/banner4.png"
               alt="Business"
               width={1920}
               height={1080}
-              priority
-              className="image-inner  rounded-4xl w-full h-auto"
+              className="image-inner h-65 w-full object-cover rounded-3xl lg:h-auto lg:rounded-4xl"
             />
           </div>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 mt-20">
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="why-image  rounded-4xl overflow-hidden">
+      <section className="mx-auto mt-16 max-w-7xl px-4 md:mt-20 md:px-6">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-14">
+          <div className="why-image overflow-hidden rounded-3xl lg:rounded-4xl">
             <Image
               src="/banner/banner5.png"
               alt="Developers"
               width={1920}
               height={1080}
-              priority
-              className="w-full h-auto"
+              className="h-80 w-full object-cover lg:h-auto"
             />
           </div>
-
           <div className="why-content rounded-4xl overflow-hidden">
             <div className="grid">
-              <div className="space-y-10">
+              <div className="space-y-8 lg:space-y-10">
                 <div>
-                  <h2 className="why-title text-5xl font-bold leading-tight text-black">
+                  <h2 className="why-title text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
                     Why Choose
                     <span className="text-[#14B8A6]"> Sofia</span>?
                   </h2>
 
-                  <p className="mt-5 text-lg text-gray-500 leading-8 max-w-xl">
+                  <p className="mt-2 text-sm leading-6 text-gray-500 md:text-base md:leading-7">
                     We help startups and businesses build powerful digital
                     products with modern technologies, exceptional user
                     experiences, and scalable architectures.
                   </p>
                 </div>
-
-                <div className="space-y-8">
-                  <div className="why-item flex gap-4">
-                    <div className="mt-1 h-6 w-8 rounded-full bg-black flex items-center justify-center text-white text-sm">
+                <div className="space-y-6 lg:space-y-8">
+                  <div className="why-item flex items-start gap-3 md:gap-4">
+                    <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-black text-white">
                       ✓
                     </div>
-
                     <div>
                       <h3 className="text-2xl font-semibold text-black">
                         Next.js & React Development
                       </h3>
 
-                      <p className="mt-2 text-gray-500 leading-7">
+                      <p className="mt-2 text-sm leading-6 text-gray-500 md:text-base md:leading-7">
                         Build modern, fast, and SEO-friendly web applications
                         using the latest technologies and best development
                         practices.
                       </p>
                     </div>
                   </div>
-
                   <div className="why-item flex gap-4">
-                    <div className="mt-1 h-6 w-8 rounded-full bg-black flex items-center justify-center text-white text-sm">
+                    <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-black text-white">
                       ✓
                     </div>
 
@@ -258,15 +252,14 @@ function Main() {
                         Custom SaaS Solutions
                       </h3>
 
-                      <p className="mt-2 text-gray-500 leading-7">
+                      <p className="mt-2 text-sm leading-6 text-gray-500 md:text-base md:leading-7">
                         Develop scalable SaaS platforms and business systems
                         tailored to your company`s needs and long-term growth.
                       </p>
                     </div>
                   </div>
-
                   <div className="why-item flex gap-4">
-                    <div className="mt-1 h-6 w-8 rounded-full bg-black flex items-center justify-center text-white text-sm">
+                    <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-black text-white">
                       ✓
                     </div>
 
@@ -275,16 +268,15 @@ function Main() {
                         UI/UX Excellence
                       </h3>
 
-                      <p className="mt-2 text-gray-500 leading-7">
+                      <p className="mt-2 text-sm leading-6 text-gray-500 md:text-base md:leading-7">
                         Create beautiful, user-friendly interfaces that improve
                         engagement, increase conversions, and strengthen your
                         brand.
                       </p>
                     </div>
                   </div>
-
                   <div className="why-item flex gap-4">
-                    <div className="mt-1 h-6 w-8 rounded-full bg-black flex items-center justify-center text-white text-sm">
+                    <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-black text-white">
                       ✓
                     </div>
 
@@ -293,7 +285,7 @@ function Main() {
                         Long-Term Support
                       </h3>
 
-                      <p className="mt-2 text-gray-500 leading-7">
+                      <p className="mt-2 text-sm leading-6 text-gray-500 md:text-base md:leading-7">
                         Continuous maintenance, updates, and technical support
                         to keep your digital products secure, stable, and up to
                         date.
