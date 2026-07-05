@@ -1,11 +1,19 @@
-const CACHE_NAME = "sofia-cache-v1";
+const CACHE_NAME = "sofia-cache-v2";
 
 const urlsToCache = ["/", "/icon-192x192.png", "/icon-512x512.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
+    caches.open(CACHE_NAME).then(async (cache) => {
+      await Promise.all(
+        urlsToCache.map(async (url) => {
+          try {
+            await cache.add(url);
+          } catch (error) {
+            console.error("Failed to cache:", url, error);
+          }
+        }),
+      );
     }),
   );
 
@@ -27,11 +35,37 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET") return;
+  if (event.request.method !== "GET") {
+    return;
+  }
+
+  if (!event.request.url.startsWith("http")) {
+    return;
+  }
 
   event.respondWith(
-    fetch(event.request).catch(() => {
-      return caches.match(event.request);
-    }),
+    fetch(event.request)
+      .then((response) => {
+        if (!response || response.status !== 200) {
+          return response;
+        }
+
+        const responseClone = response.clone();
+
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, responseClone);
+        });
+
+        return response;
+      })
+      .catch(async () => {
+        const cachedResponse = await caches.match(event.request);
+
+        if (cachedResponse) {
+          return cachedResponse;
+        }
+
+        return caches.match("/");
+      }),
   );
 });
