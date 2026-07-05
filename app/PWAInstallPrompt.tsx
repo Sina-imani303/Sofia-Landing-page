@@ -27,15 +27,12 @@ export default function PWAInstallPrompt() {
       setShowInstall(true);
     };
 
-    window.addEventListener(
-      "beforeinstallprompt",
-      handleBeforeInstallPrompt
-    );
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
 
     return () => {
       window.removeEventListener(
         "beforeinstallprompt",
-        handleBeforeInstallPrompt
+        handleBeforeInstallPrompt,
       );
     };
   }, []);
@@ -57,10 +54,8 @@ export default function PWAInstallPrompt() {
   if (!showInstall) return null;
 
   return (
-    <div className="fixed bottom-5 left-1/2 z-[9999] w-[90%] max-w-md -translate-x-1/2 rounded-2xl bg-white p-5 shadow-2xl">
-      <h3 className="text-lg font-bold">
-        Install Sofia
-      </h3>
+    <div className="fixed bottom-5 left-1/2 z-999 w-[90%] max-w-md -translate-x-1/2 rounded-2xl bg-white p-5 shadow-2xl">
+      <h3 className="text-lg font-bold">Install Sofia</h3>
 
       <p className="mt-2 text-sm text-gray-600">
         Add Sofia to your home screen for quick access.
