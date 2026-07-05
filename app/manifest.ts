@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
+    id: "/sofia-pwa-v2",
     name: "Sofia",
     short_name: "Sofia",
     description:
