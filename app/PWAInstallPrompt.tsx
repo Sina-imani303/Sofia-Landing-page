@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
-
   userChoice: Promise<{
     outcome: "accepted" | "dismissed";
     platform: string;
@@ -21,24 +20,33 @@ export default function PWAInstallPrompt() {
     const handleBeforeInstallPrompt = (event: Event) => {
       event.preventDefault();
 
-      const promptEvent = event as BeforeInstallPromptEvent;
-
-      setInstallPrompt(promptEvent);
+      setInstallPrompt(event as BeforeInstallPromptEvent);
       setShowInstall(true);
     };
 
+    const handleAppInstalled = () => {
+      setShowInstall(false);
+      setInstallPrompt(null);
+    };
+
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+
+    window.addEventListener("appinstalled", handleAppInstalled);
 
     return () => {
       window.removeEventListener(
         "beforeinstallprompt",
         handleBeforeInstallPrompt,
       );
+
+      window.removeEventListener("appinstalled", handleAppInstalled);
     };
   }, []);
 
   const handleInstall = async () => {
-    if (!installPrompt) return;
+    if (!installPrompt) {
+      return;
+    }
 
     await installPrompt.prompt();
 
@@ -51,10 +59,12 @@ export default function PWAInstallPrompt() {
     setInstallPrompt(null);
   };
 
-  if (!showInstall) return null;
+  if (!showInstall) {
+    return null;
+  }
 
   return (
-    <div className="fixed bottom-5 left-1/2 z-999 w-[90%] max-w-md -translate-x-1/2 rounded-2xl bg-white p-5 shadow-2xl">
+    <div className="fixed bottom-5 left-1/2 z-9999 w-[90%] max-w-md -translate-x-1/2 rounded-2xl bg-white p-5 shadow-2xl">
       <h3 className="text-lg font-bold">Install Sofia</h3>
 
       <p className="mt-2 text-sm text-gray-600">
